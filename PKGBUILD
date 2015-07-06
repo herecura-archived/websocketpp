@@ -6,13 +6,14 @@
 
 pkgname=websocketpp
 pkgver=0.3.0
-pkgrel=1
+pkgrel=2
 pkgdesc='C++/Boost Asio based websocket client/server library'
 url='http://www.zaphoyd.com/websocketpp/'
 license=('BSD')
 arch=('any')
 makedepends=('cmake')
 source=("https://github.com/zaphoyd/${pkgname}/archive/${pkgver}.tar.gz")
+sha256sums=('c1fcf60492bd11ae1cac43b6060424173abdf55011be1987fc922aed0254fdd1')
 
 prepare() {
     if [[ -e ${srcdir}/${pkgname}-${pkgver}-build ]]; then rm -rf ${srcdir}/${pkgname}-${pkgver}-build; fi
@@ -29,4 +30,3 @@ package() {
     install -D -m644 ${srcdir}/${pkgname}-${pkgver}/COPYING ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE
 }
 
-sha256sums=('c1fcf60492bd11ae1cac43b6060424173abdf55011be1987fc922aed0254fdd1')
